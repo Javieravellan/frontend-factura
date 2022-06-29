@@ -1,0 +1,1 @@
+export const PATH_API = "https://localhost:44349/api/factura"

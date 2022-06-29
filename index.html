@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web App | Facturación</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class=" d-flex justify-content-between card-header">
+                <h1 class="card-title">Facturación de pedido</h1>
+                <p class="align-self-center m-0">Fecha: <span id="fecha">Fecha 1</span></p>
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <p class="card-title fw-bold">Facturar a</p>
+                        <p class="m-0">Nombre Cliente</p>
+                        <p class="m-0">Nombre Empresa</p>
+                        <p class="m-0">Dirección</p>
+                    </div>
+                    <div>
+                        <p class="card-title fw-bold">Enviar a</p>
+                        <p class="m-0">Nombre Cliente</p>
+                        <p class="m-0">Nombre Empresa</p>
+                        <p class="m-0">Dirección</p>
+                    </div>
+                </div>
+                <br>
+                <div class="text-center container">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Vendedor</th>
+                                <th scope="col">Orden de compra</th>
+                                <th scope="col">Enviar por</th>
+                                <th scope="col">Términos y condiciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td scope="row">Javier Chiquito</td>
+                                <td>NRO0012</td>
+                                <td>DHL</td>
+                                <td>Pago al contado</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Código</th>
+                                <th scope="col">Descripción</th>
+                                <th scope="col">Cant.</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tb_body">
+                        </tbody>
+                        <tfooter>
+                            <tr>
+                                <td class="text-start" colspan="3">
+                                    <button class="btn btn-primary"
+                                    data-bs-toggle="modal" 
+                                    id="abrirModal"
+                                    data-bs-target="#formNuevoProducto">Agregar producto</button>
+                                </td>
+                                <td class="text-center">Total </td>
+                                <td class="text-center"><span id="total">0.00</span></td>
+                            </tr>
+                        </tfooter>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="formNuevoProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Nuevo ingreso</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formu">
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Seleccionar producto:</label>
+                            <select id="cmbProductos" class="form-control">
+                                <option value="" selected>Seleccione uno...</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="precio" class="col-form-label">Precio:</label>
+                            <input class="form-control" id="precio" type="number" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="cantidad" class="col-form-label">Cantidad:</label>
+                            <input class="form-control" id="cantidad" type="number" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="cancelar" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" id="enviar" class="btn btn-primary">Agregar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script type="module" src="scripts/controladores/index.js"></script>
+</body>
+</html>
